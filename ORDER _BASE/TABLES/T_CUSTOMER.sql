@@ -12,13 +12,7 @@ create or replace TABLE ORDER_PROCESS."ORDER _BASE".T_CUSTOMER (
 	constraint PK_CUSTOMER_ID primary key (CUSTOMER_ID)
 );
 
-
-update t_customer
-set loyalty_points = case
-when t_promotion.customer_category = 'Gold' and t_promotion.promotion_type = 'Loyalty' then 100
-when t_promotion.customer_category = 'Silver' and t_promotion.promotion_type = 'Loyalty' then 50
-when t_promotion.customer_category = 'Bronze' and t_promotion.promotion_type = 'Loyalty' then 30
-ELSE 0
-END
-FROM t_promotion
-where t_customer.category = t_promotion.CUSTOMER_CATEGORY;
+insert into t_customer
+(CUSTOMER_ID, ADDRESS, PHONE_NO, CATEGORY, STATUS, TOTAL_ORDERS, TOTAL_INVOICE_AMOUNT, LOYALTY_POINTS, CREATE_DATE,	CREATE_USER)
+values
+('CUST-01', '2 Main StAnytown', '1234567890', 'Gold', 'Active', 3, 0, 0, DATE '2023-05-01', 'admin');
