@@ -40,5 +40,4 @@ BEGIN
    RETURN 'Invoices generated successfully';
 END;
 $$;
-
-
+CALL P_INVOICE_GENERATE()
