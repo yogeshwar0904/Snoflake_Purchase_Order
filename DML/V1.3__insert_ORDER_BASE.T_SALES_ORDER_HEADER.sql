@@ -1,17 +1,23 @@
-INSERT INTO ORDER_PROCESS."ORDER_BASE".t_customer (
-    CUSTOMER_ID, 
-    ADDRESS, 
-    PHONE_NO, 
-    CATEGORY, 
-    STATUS, 
-    TOTAL_ORDERS, 
-    TOTAL_INVOICE_AMOUNT, 
-    LOYALTY_POINTS, 
-    CREATE_DATE, 
-    CREATE_USER
+insert into ORDER_PROCESS."ORDER_BASE".T_SALES_ORDER_HEADER (
+    ORDER_ID,
+    ORDER_DATE,
+    STATUS,
+    CUSTOMER_ID,
+    ITEM_COUNT,
+    TOTAL_AMOUNT,
+    DISCOUNT,
+    CREATE_DATE,
+    CREATE_USER,
+     COUPON_CODE
 ) VALUES
-    ('CUST-01', '2 Main StAnytown', '1234567890', 'Gold', 'Active', 3, 0, 0, DATE '2023-05-01', 'admin'),
-    ('CUST-02', '2 Main StOldtown', '1234567891', 'Silver', 'Active', 2, 0, 0, DATE '2023-05-01', 'admin'),
-    ('CUST-03', '3 Main StAnytown', '1234567892', 'Bronze', 'Active', 3, 0, 0, DATE '2023-05-01', 'admin'),
-    ('CUST-04', '4 Main StOldtown', '1234567893', 'regular', 'Active', 2, 0, 0, DATE '2023-05-01', 'admin'),
-    ('CUST-05', '5 Main StAnytown', '1234567894', 'Gold', 'Inactive', 1, 0, 0, DATE '2023-05-01', 'admin');
+    ('ORD-01', DATE '2023-07-15', 'OPEN', 'CUST-01', 1, 0, 0, DATE '2023-05-01', 'admin','No Coupon'),
+    ('ORD-02', DATE '2023-07-18', 'OPEN', 'CUST-01', 1, 0, 0, DATE '2023-05-03', 'admin', 'No Coupon'),
+    ('ORD-03', DATE '2023-07-20', 'OPEN', 'CUST-01', 1, 0, 0, DATE '2023-05-05', 'admin', 'No Coupon'),
+    ('ORD-11', DATE '2023-07-18', 'OPEN', 'CUST-02', 1, 0, 0, DATE '2023-05-03', 'admin', 'No Coupon'),
+    ('ORD-12', DATE '2023-07-20', 'OPEN', 'CUST-02', 1, 0, 0, DATE '2023-05-05', 'admin', 'No Coupon'),
+    ('ORD-23', DATE '2023-07-21', 'OPEN','CUST-03',1, 0, 0, DATE '2023-05-05', 'admin','No Coupon'),
+    ('ORD-24', DATE '2023-07-21', 'OPEN','CUST-03',1, 0, 0, DATE '2023-05-05', 'admin','No Coupon'),
+    ('ORD-25', DATE '2023-07-21', 'OPEN','CUST-03',1, 0, 0, DATE '2023-05-05', 'admin','No Coupon'),
+    ('ORD-14', DATE '2023-07-25', 'OPEN','CUST-04',1, 0, 0, DATE '2023-05-01', 'admin','Coupon_X'),
+    ('ORD-15', DATE '2023-07-26', 'OPEN','CUST-04',1, 0, 0, DATE '2023-05-03', 'admin','Coupon_X'),
+    ('ORD-17', DATE '2023-07-26', 'OPEN','CUST-05',1, 0, 0, DATE '2023-05-03', 'admin','No Coupon');
